@@ -3,6 +3,7 @@ body{
   color: yellow;
   font-family: "Comic Sans","Comic Sans MS","Chalkboard","ChalkboardSE-Regular","Marker Felt","Purisa","URW Chancery L",cursive,sans-serif;
   text-align: center;
+  background-image: url(img/bg-stars.gif);
 }
 
 .menu{
