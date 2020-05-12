@@ -7,7 +7,7 @@
   <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
   <title>Leo Souza</title>
 </head>
-<body>
+<body onmousewheel="play()" onclick="play()" onscroll="play()" onload="play()">
 
   <header>
     <nav class="menu">
@@ -34,11 +34,19 @@
   <br>
   <div class="musiquinha">
     <img src="img/test/mchammer.gif" alt="dançarino show">
-    <audio controls autoplay loop>
+    <audio controls id="audio">
       <source src="Top-Gear.mp3" type="audio/mpeg">
     </audio>
     <img src="img/test/mchammer.gif" alt="dançarino show">
   </div>
+
+  <script>
+    function play() {    
+      var audio = document.getElementById("audio");
+      audio.play();
+      audio.volume = 0.1;
+    }
+  </script>
 
 </body>
 </html>
