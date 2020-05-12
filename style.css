@@ -3,15 +3,6 @@ body{
   color: yellow;
   font-family: "Comic Sans","Comic Sans MS","Chalkboard","ChalkboardSE-Regular","Marker Felt","Purisa","URW Chancery L",cursive,sans-serif;
   text-align: center;
-
-  background-image: url(img/test/dancing-baby.gif);
-}
-
-.container{
-  background-color: #000;
-  max-width: 900px;
-  min-height: 100vh;
-  margin: 0 auto;
 }
 
 .menu{
