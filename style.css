@@ -30,6 +30,10 @@ body{
   background-color: yellow;
 }
 
+marquee{
+  color: rgb(0, 255, 13);
+}
+
 .site-title{
  color: red;
 }
