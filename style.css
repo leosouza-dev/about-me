@@ -14,7 +14,7 @@ body{
 }
 
 header{
-  height: 100vh;
+  height: calc(100vh - 89px);
 }
 
 .menu{
@@ -101,7 +101,7 @@ marquee{
   background-size: cover;
   /* background-position: center; */
   width: 100%;
-  height: 100vh;
+  height: calc(100vh - 89px);
 
   display: flex;
   justify-content: center;
@@ -136,12 +136,12 @@ marquee{
 
 /* portfolio */
 .portfolio{
-  background-image: url();
+  background-image: url(img/bg-synthwave.gif);
   background-repeat: no-repeat;
   background-size: cover;
   background-position: center;
   width: 100%;
-  height: 100vh;
+  height: calc(100vh - 89px);
 }
 
 /* contato */
@@ -151,5 +151,5 @@ marquee{
   background-size: cover;
   background-position: center;
   width: 100%;
-  height: 100vh;
+  height: calc(100vh - 89px);
 }
