@@ -87,6 +87,10 @@ marquee{
   margin-bottom: 30px;
 }
 
+.img-pc img{
+  height: 200px;
+}
+
 
 .under-construction{
  margin-top: 30px;
@@ -99,7 +103,7 @@ marquee{
   background-size: cover;
   /* background-position: center; */
   width: 100%;
-  /* height: 100vh; */
+  min-height: 100vh; */
   padding-top: 80px;
   padding-bottom: 80px;
 
