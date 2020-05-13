@@ -150,9 +150,10 @@ marquee{
   padding-bottom: 50px;
 }
 
-.imagens-portfolio{
+.imagens-portfolio-contato{
   margin-top: 20px;
   display: flex;
+  flex-wrap: wrap;
   justify-content: space-around;
   
   margin-left: auto;
@@ -160,14 +161,14 @@ marquee{
   max-width: 960px;
 }
 
-.imagens-portfolio figure{
+.imagens-portfolio-contato figure{
   border: 3px solid #000;
   box-shadow: 5px 5px 1px 1px rgba(0,0,0,1);
   background-color: #000;
   color: rgb(0, 255, 13);
 }
 
-.imagens-portfolio img{
+.imagens-portfolio-contato img{
   height: 240px;
   width: 320px;
 }
@@ -179,5 +180,20 @@ marquee{
   background-size: cover;
   background-position: center;
   width: 100%;
-  height: calc(100vh - 89px);
+  min-height: 100vh;
+  padding-top: 50px;
+}
+
+.rainbow-text {
+  background-image: linear-gradient(to left, violet, indigo, blue, green, yellow, orange, red);   -webkit-background-clip: text;
+  color: transparent;
+  /* border: 1px solid #000; */
+  width: 300px;
+  font-size: 80px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.contato .imagens-portfolio-contato div{
+  margin-top: 50px;
 }
