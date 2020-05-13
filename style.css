@@ -10,11 +10,15 @@ body{
   font-family: "Comic Sans","Comic Sans MS","Chalkboard","ChalkboardSE-Regular","Marker Felt","Purisa","URW Chancery L",cursive,sans-serif;
   text-align: center;
   font-size: 18px;
+
+  /* esconder a barra de rolagem */
+  /* overflow: hidden; */
 }
 
 header{
-  height: calc(100vh - 89px);
   background-image: url(img/bg-stars.gif);
+  min-height: 100vh;
+  padding-top: 1px;
 }
 
 .menu{
@@ -23,6 +27,7 @@ header{
   position: fixed;
   width: 100vw;
   top: 0;
+
   z-index: 10000;
 }
 
@@ -82,16 +87,9 @@ marquee{
   margin-bottom: 30px;
 }
 
-.img-pc img{
-  height: 200px;
-}
 
 .under-construction{
  margin-top: 30px;
-}
-
-.contador{
-  margin-top: 30px;
 }
 
 /* sobre */
@@ -101,7 +99,9 @@ marquee{
   background-size: cover;
   /* background-position: center; */
   width: 100%;
-  height: calc(100vh - 89px);
+  /* height: 100vh; */
+  padding-top: 80px;
+  padding-bottom: 80px;
 
   display: flex;
   justify-content: center;
@@ -141,7 +141,8 @@ marquee{
   background-size: cover;
   background-position: center;
   width: 100%;
-  height: calc(100vh - 89px);
+  height: 100vh;
+  padding-top: 150px;
 }
 
 /* contato */
