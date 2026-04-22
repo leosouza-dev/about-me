@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>★ Leo Souza — Homepage ★ [1996 Edition]</title>
+  <meta name="description" content="Leo Souza - Instrutor e Desenvolvedor. Homepage oficial estilo 1996." />
+  <link rel="stylesheet" href="retro.css" />
+</head>
+<body>
+  <!-- Overlay de scanlines CRT (pitada moderna) -->
+  <div class="crt-overlay" aria-hidden="true"></div>
+
+  <!-- MARQUEE topo: clássico dos anos 90, tag deprecated mas browsers ainda renderizam -->
+  <div class="top-banner">
+    <marquee scrollamount="10" behavior="scroll" direction="left">
+      ★★★ BEM-VINDO À HOMEPAGE OFICIAL DO LEO SOUZA ★★★ #IMERSAOCSS ★ CAELUM ★ ALURA ★
+      TOPPER!!! ★ melhor visualizado em Netscape Navigator 3.0 ★ resolução 800x600 ★
+      cookies permitidos ★ Java ativado ★
+    </marquee>
+  </div>
+
+  <!-- Menu de navegação -->
+  <nav class="menu">
+    <ul>
+      <li><a href="#home">Home</a></li>
+      <li><a href="#sobre">Sobre</a></li>
+      <li><a href="#portfolio">Portfólio</a></li>
+      <li><a href="#contato">Contato</a></li>
+    </ul>
+  </nav>
+
+  <!-- HERO -->
+  <header id="home" class="hero">
+    <div class="rainbow-bar"></div>
+
+    <h1 class="site-title">
+      <span class="glitter">Leo Souza</span>
+      <span class="hacker-icon" aria-hidden="true">
+        <svg viewBox="0 0 60 60" width="60" height="60">
+          <rect x="10" y="14" width="40" height="30" fill="#00ff00" stroke="#000" stroke-width="2"/>
+          <rect x="14" y="18" width="8" height="3" fill="#000"/>
+          <rect x="26" y="18" width="8" height="3" fill="#000"/>
+          <rect x="38" y="18" width="8" height="3" fill="#000"/>
+          <rect x="14" y="24" width="12" height="3" fill="#000"/>
+          <rect x="30" y="24" width="16" height="3" fill="#000"/>
+          <rect x="14" y="30" width="20" height="3" fill="#000"/>
+          <rect x="38" y="30" width="8" height="3" fill="#000"/>
+          <circle cx="30" cy="50" r="4" fill="#ff00ff"/>
+        </svg>
+      </span>
+    </h1>
+    <h2 class="site-subtitle blink">Instrutor e Desenvolvedor</h2>
+
+    <!-- "computador" desenhado só com CSS -->
+    <div class="computer-panel">
+      <div class="pc-screen">
+        <div class="pc-content">
+          <div><span class="prompt">C:\&gt;</span> <span class="typing"></span><span class="cursor">_</span></div>
+        </div>
+      </div>
+      <div class="pc-base"></div>
+      <div class="pc-stand"></div>
+    </div>
+
+    <!-- Chamas CSS -->
+    <div class="flames-row" aria-hidden="true">
+      <div class="flames"></div>
+      <div class="flames"></div>
+      <div class="flames"></div>
+    </div>
+
+    <!-- "Site em construção" clássico -->
+    <div class="under-construction">
+      🚧 SITE EM CONSTRUÇÃO — PERDOE A POEIRA 🚧
+    </div>
+
+    <!-- Music player estilo 90s (substitui o autoplay hostil por botão + WebAudio) -->
+    <div class="music-player">
+      <span class="dancer" aria-hidden="true">♪</span>
+      <button id="musicBtn" class="music-btn" type="button">
+        ▶ TOCAR MUSIQUINHA
+      </button>
+      <span class="dancer" aria-hidden="true">♫</span>
+    </div>
+
+    <div class="rainbow-bar"></div>
+
+    <div class="visit-counter" title="contador de visitas — como em 1996!">
+      visitas totais: <span id="counter">000000</span>
+    </div>
+  </header>
+
+  <!-- SOBRE -->
+  <section id="sobre" class="panel sobre">
+    <h2 class="section-title">★ Sobre Mim ★</h2>
+    <div class="sobre-grid">
+      <div class="polaroid">
+        <!-- Avatar pixel-art em SVG (substitui leonardo1.gif) -->
+        <svg class="avatar" viewBox="0 0 100 100" width="200" height="200" aria-label="Avatar pixel-art do Leo">
+          <rect width="100" height="100" fill="#87ceeb"/>
+          <rect x="25" y="18" width="50" height="10" fill="#3d2817"/>
+          <rect x="20" y="25" width="60" height="20" fill="#3d2817"/>
+          <rect x="25" y="30" width="50" height="35" fill="#ffcc99"/>
+          <rect x="30" y="40" width="8" height="6" fill="#fff"/>
+          <rect x="62" y="40" width="8" height="6" fill="#fff"/>
+          <rect x="33" y="42" width="4" height="4" fill="#000"/>
+          <rect x="65" y="42" width="4" height="4" fill="#000"/>
+          <rect x="46" y="48" width="8" height="4" fill="#cc8866"/>
+          <rect x="40" y="56" width="20" height="4" fill="#aa4444"/>
+          <rect x="20" y="65" width="60" height="35" fill="#ff2f9c"/>
+          <rect x="40" y="70" width="20" height="8" fill="#fff"/>
+          <rect x="44" y="74" width="12" height="2" fill="#000"/>
+        </svg>
+        <span class="polaroid-caption">eu :)</span>
+      </div>
+      <article class="bio">
+        <p>
+          Graduado em <strong>Tecnologia Eletrônica Industrial</strong> pela Faculdade SENAI SP,
+          Leonardo já trabalhou na área industrial desenvolvendo sistemas de automação para
+          máquinas e processos.
+        </p>
+        <p>
+          Atualmente, está cursando pós-graduação em <strong>Arquitetura de Soluções em
+          Plataforma .NET</strong> e é instrutor aqui na <strong>Caelum</strong>.
+        </p>
+        <ul class="fun-list">
+          <li>💾 HTML desde o IE 5</li>
+          <li>🎓 pós em .NET</li>
+          <li>🛠️ automação industrial</li>
+          <li>☕ movido a café</li>
+        </ul>
+      </article>
+    </div>
+  </section>
+
+  <!-- PORTFÓLIO -->
+  <section id="portfolio" class="panel portfolio">
+    <h2 class="section-title glitter">★ Portfólio ★</h2>
+    <div class="cards">
+      <article class="card">
+        <div class="card-icon teacher-icon">
+          <svg viewBox="0 0 60 60" width="60" height="60" aria-hidden="true">
+            <rect x="6" y="10" width="48" height="30" fill="#1a1a1a" stroke="#fff" stroke-width="2"/>
+            <text x="30" y="30" text-anchor="middle" fill="#00ff00" font-family="monospace" font-size="16" font-weight="bold">C#</text>
+            <rect x="14" y="40" width="32" height="8" fill="#888"/>
+            <rect x="22" y="48" width="16" height="4" fill="#555"/>
+          </svg>
+        </div>
+        <h3>Instrutor C# e ASP.NET</h3>
+        <p>Ensinando o futuro da web, um <code>namespace</code> por vez.</p>
+      </article>
+      <article class="card">
+        <div class="card-icon dev-icon">
+          <svg viewBox="0 0 60 60" width="60" height="60" aria-hidden="true">
+            <text x="10" y="30" fill="#00eaff" font-family="monospace" font-size="20" font-weight="bold">&lt;/&gt;</text>
+            <rect x="8" y="36" width="44" height="2" fill="#ff2f9c"/>
+            <rect x="8" y="42" width="30" height="2" fill="#39ff14"/>
+            <rect x="8" y="48" width="38" height="2" fill="#ffff00"/>
+          </svg>
+        </div>
+        <h3>Desenvolvedor</h3>
+        <p>Sistemas de automação, web, e tudo que vira código.</p>
+      </article>
+    </div>
+  </section>
+
+  <!-- CONTATO -->
+  <section id="contato" class="panel contato">
+    <h2 class="section-title rainbow-text">Contato</h2>
+    <p class="contato-sub">me mande um e-mail pombo-correio:</p>
+    <ul class="social-links">
+      <li><a href="https://github.com/leosouza-dev" target="_blank" rel="noopener">
+        <span class="sparkle">✦</span> GitHub <span class="sparkle">✦</span>
+      </a></li>
+      <li><a href="https://twitter.com/leosouzadev" target="_blank" rel="noopener">
+        <span class="sparkle">✦</span> Twitter <span class="sparkle">✦</span>
+      </a></li>
+      <li><a href="https://www.linkedin.com/in/leonardo-rodrigues-de-souza-7a17b333/" target="_blank" rel="noopener">
+        <span class="sparkle">✦</span> LinkedIn <span class="sparkle">✦</span>
+      </a></li>
+      <li><a href="https://instagram.com/leosouzadev" target="_blank" rel="noopener">
+        <span class="sparkle">✦</span> Instagram <span class="sparkle">✦</span>
+      </a></li>
+    </ul>
+  </section>
+
+  <!-- FOOTER com web ring -->
+  <footer class="retro-footer">
+    <div class="webring">
+      [ <a href="#">← anterior</a> ] &nbsp; webring '96 &nbsp; [ <a href="#">próximo →</a> ]
+    </div>
+    <p>© 1996–2026 — Leo Souza. Powered by HTML &lt;3 e muitos GIFs imaginários.</p>
+    <p class="small">dica: tente o <em>Konami Code</em> ↑↑↓↓←→←→BA</p>
+  </footer>
+
+  <script src="retro.js"></script>
+</body>
+</html>
