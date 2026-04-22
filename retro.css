@@ -242,13 +242,16 @@ body::before {
    COMPUTADOR desenhado em CSS puro (substitui computer-01.gif)
    ============================================================ */
 .computer-panel {
-  width: 300px;
+  /* min() escolhe o menor entre 300px e 90% da tela →
+     nunca excede a viewport em celulares estreitos */
+  width: min(300px, 90vw);
   margin: 30px auto;
   filter: drop-shadow(0 0 24px rgba(0, 234, 255, 0.55));
 }
 .pc-screen {
-  width: 280px;
-  height: 210px;
+  width: 100%;
+  aspect-ratio: 4 / 3;     /* proporção de CRT antigo — escala fluido */
+  min-height: 170px;
   margin: 0 auto;
   background: #000;
   border: 10px solid var(--silver);
@@ -264,6 +267,7 @@ body::before {
   overflow: hidden;
   position: relative;
 }
+.pc-base { max-width: 75%; }
 /* efeito de brilho "vidro curvo" da tela */
 .pc-screen::before {
   content: "";
@@ -684,16 +688,153 @@ body.turbo {
 }
 
 /* ============================================================
-   RESPONSIVO
+   RESPONSIVO — tablet e celular grande (≤ 700px)
+   Ajusta layout e reduz espaçamentos, mantém proporções
    ============================================================ */
 @media (max-width: 700px) {
-  .sobre-grid { grid-template-columns: 1fr; justify-items: center; }
-  .fun-list   { grid-template-columns: 1fr; }
-  .site-title { flex-direction: column; }
-  .panel      { box-shadow: 4px 4px 0 var(--hot-pink), 8px 8px 0 var(--cyan); }
+  /* --- Estrutura --- */
+  .sobre-grid {
+    grid-template-columns: 1fr;
+    justify-items: center;
+    gap: 28px;
+    text-align: center;
+  }
+  .fun-list { grid-template-columns: 1fr; }
+
+  .site-title {
+    flex-direction: column;
+    gap: 12px;
+    /* sombra menor — offsets grandes ficam desproporcionais em telas pequenas */
+    text-shadow:
+      2px 2px 0 var(--magenta),
+      4px 4px 0 var(--cyan),
+      6px 6px 8px rgba(0, 0, 0, 0.8);
+  }
+
+  .section-title {
+    letter-spacing: 1.5px;
+    text-shadow: 2px 2px 0 var(--hot-pink), 4px 4px 0 var(--purple);
+  }
+
+  /* --- Painéis: margens e sombra menores --- */
+  .panel {
+    margin: 36px 14px;
+    padding: 24px 18px;
+    box-shadow: 5px 5px 0 var(--hot-pink), 10px 10px 0 var(--cyan);
+  }
+
+  /* --- Hero --- */
+  .hero { padding: 20px 14px 40px; }
+  .rainbow-bar { height: 7px; margin: 16px auto; }
+
+  /* --- Top banner e menu mais compactos --- */
+  .top-banner {
+    font-size: 12px;
+    padding: 7px 0;
+    letter-spacing: 0.5px;
+  }
+  .menu { padding: 10px 8px; }
+  .menu ul { gap: 8px; }
+  .menu a {
+    padding: 12px 16px;   /* mantém >=44px de tap target */
+    font-size: 13px;
+  }
+
+  /* --- Tipografia mais legível --- */
+  .bio { font-size: 17px; line-height: 1.7; }
+  .site-subtitle { font-size: 20px; }
+
+  /* --- Contador: letter-spacing grande aperta em telas pequenas --- */
+  .visit-counter {
+    letter-spacing: 3px;
+    font-size: 16px;
+    padding: 8px 14px;
+  }
+
+  /* --- Music player: permite quebrar em várias linhas --- */
+  .music-player {
+    flex-wrap: wrap;
+    justify-content: center;
+    padding: 12px 16px;
+    gap: 12px;
+  }
+  .music-btn {
+    padding: 14px 20px;   /* touch target confortável */
+    font-size: 13px;
+  }
+
+  /* --- Under construction: encaixar em uma linha --- */
+  .under-construction {
+    font-size: 11px;
+    padding: 10px 16px;
+    letter-spacing: 1px;
+    margin: 18px 4px;
+  }
+
+  /* --- Polaroid/avatar menores --- */
+  .polaroid { transform: rotate(-3deg); padding: 10px 10px 42px; }
+  .polaroid .avatar { width: 170px; height: 170px; }
+
+  /* --- Cards --- */
+  .card { padding: 26px 18px; }
+  .card h3 { font-size: 19px; }
+
+  /* --- Social links em 2 colunas --- */
+  .social-links {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 12px;
+  }
+  .social-links a {
+    padding: 18px 12px;
+    font-size: 14px;
+  }
 }
 
-/* Respeita preferência de movimento reduzido (acessibilidade moderna) */
+/* ============================================================
+   RESPONSIVO — celular pequeno (≤ 480px)
+   Layout em coluna única, tipografia recalculada
+   ============================================================ */
+@media (max-width: 480px) {
+  /* Menu vira coluna para aumentar área de toque */
+  .menu ul { flex-direction: column; gap: 6px; }
+  .menu a { display: block; width: 100%; text-align: center; }
+
+  /* Títulos: clamp mais agressivo para pequeno */
+  .site-title { font-size: clamp(32px, 11vw, 56px); }
+  .section-title { font-size: clamp(24px, 7vw, 36px); }
+
+  /* Painéis ainda mais enxutos */
+  .panel {
+    margin: 24px 10px;
+    padding: 22px 14px;
+    box-shadow: 3px 3px 0 var(--hot-pink), 6px 6px 0 var(--cyan);
+  }
+
+  /* Social links em coluna — cada link ocupa linha inteira */
+  .social-links { grid-template-columns: 1fr; }
+
+  /* Avatar menor ainda */
+  .polaroid .avatar { width: 150px; height: 150px; }
+  .polaroid { transform: rotate(-2deg); }
+
+  /* Fun-list legível */
+  .fun-list { font-size: 13px; }
+  .fun-list li { padding: 8px 10px; }
+
+  /* Top banner minimalista */
+  .top-banner { font-size: 11px; letter-spacing: 0; }
+
+  /* Computer panel: reduz texto dentro da tela */
+  .pc-screen { font-size: 12px; padding: 16px; }
+
+  /* Footer compacto */
+  .retro-footer { padding: 24px 14px; }
+  .webring { font-size: 12px; }
+}
+
+/* ============================================================
+   Respeita preferência de movimento reduzido (acessibilidade)
+   ============================================================ */
 @media (prefers-reduced-motion: reduce) {
   *, *::before, *::after {
     animation-duration: 0.01ms !important;
